@@ -65,8 +65,26 @@ $superheroes = [
 
 ?>
 
-<ul>
-<?php foreach ($superheroes as $superhero): ?>
-  <li><?= $superhero['alias']; ?></li>
-<?php endforeach; ?>
-</ul>
+<?php
+// Get search query if provided
+$query = isset($_GET['query']) ? strtolower(trim($_GET['query'])) : '';
+
+$result = [];
+
+// If query is empty, return full list
+if ($query === '') {
+    $result = $superheroes;
+} else {
+    foreach ($superheroes as $hero) {
+        // Match alias or name (case-insensitive)
+        if (strtolower($hero['alias']) === $query || strtolower($hero['name']) === $query) {
+            $result[] = $hero;
+            break; // stop after first match
+        }
+    }
+}
+
+// Return JSON
+header('Content-Type: application/json');
+echo json_encode($result);
+?>

@@ -1,10 +1,133 @@
 body {
     font-family: Arial, sans-serif;
     padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #f5f5f5;
+    line-height: 1.6;
+}
+
+.container {
+    background-color: #F3F3F3;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+h1 {
+    color: #f5f5f5;
+    background-color: #4682B4;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 24px;
+    text-transform: uppercase;
+}
+
+.search-section {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.search-section p {
+    margin: 5px 0;
+    color: #666;
+}
+
+.hint {
+    font-size: 14px;
+    font-style: italic;
+    color: #888;
+    margin-bottom: 15px !important;
+}
+
+.search-box {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 300px;
 }
 
 button {
     padding: 10px 20px;
     font-size: 16px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 4px;
     cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.result-section {
+    margin-top: 30px;
+}
+
+.result-section h2 {
+    color: #333;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+    font-size: 20px;
+}
+
+#result {
+    margin-top: 20px;
+    min-height: 50px;
+}
+
+/* Styles for the list view (Figure 3) */
+#result ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#result li {
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 16px;
+    color: #333;
+}
+
+/* Styles for single superhero view (Figure 4) */
+#result h3 {
+    color: #007bff;
+    margin-bottom: 5px;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+#result h4 {
+    color: #666;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-style: italic;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+#result p {
+    line-height: 1.6;
+    color: #333;
+    margin: 0;
+}
+
+/* Style for "not found" message (Figure 5) */
+#result p:only-child {
+    color: #ff4444;
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+    padding: 20px;
 }
